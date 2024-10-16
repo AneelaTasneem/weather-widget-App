@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/ui/input";  // Now using Input component
 import { Button } from "@/components/ui/button";
 import { CloudIcon, MapPinIcon, ThermometerIcon } from "lucide-react";
 
@@ -113,11 +113,11 @@ export default function WeatherWidget() {
                 </CardHeader>
                 <CardContent>
                     <form onSubmit={handleSearch} className="flex items-center gap-2">
-                        <input
+                        <Input
                             type="text"
                             placeholder="Enter a city name"
                             value={location}
-                            onChange={(e) => setLocation(e.target.value)}
+                            onChange={(e) => setLocation(e.target.value)}  // Now using Input component
                         />
                         <Button type="submit" disabled={isLoading}>
                             {isLoading ? "Loading..." : "Search"}
