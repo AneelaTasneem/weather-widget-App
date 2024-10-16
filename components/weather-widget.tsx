@@ -1,8 +1,9 @@
+// components/weather-widget.tsx
 "use client";
 
 import { useState, FormEvent } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";  // Now using Input component
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { CloudIcon, MapPinIcon, ThermometerIcon } from "lucide-react";
 
@@ -68,8 +69,7 @@ export default function WeatherWidget() {
                 return `It's hot at ${temperature}°C. Stay hydrated!`;
             }
         } else {
-            // Placeholder for other temperature units (e.g., Fahrenheit)
-            return `${temperature}° ${unit}`;
+            return `${temperature}° ${unit}`; // Placeholder for other temperature units
         }
     }
 
@@ -94,7 +94,7 @@ export default function WeatherWidget() {
             case "fog":
                 return "Be careful! There's fog outside.";
             default:
-                return description; // Default to returning the description as is
+                return description;
         }
     }
 
@@ -117,7 +117,7 @@ export default function WeatherWidget() {
                             type="text"
                             placeholder="Enter a city name"
                             value={location}
-                            onChange={(e) => setLocation(e.target.value)}  // Now using Input component
+                            onChange={(e) => setLocation(e.target.value)} // Used Input component
                         />
                         <Button type="submit" disabled={isLoading}>
                             {isLoading ? "Loading..." : "Search"}

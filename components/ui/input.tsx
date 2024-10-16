@@ -1,8 +1,11 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
+// components/ui/input.tsx
+import * as React from "react";
+import { cn } from "@/lib/utils";
 
-// Remove the interface and directly use the built-in type
-const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {}
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
     return (
       <input
@@ -14,12 +17,9 @@ const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLI
         ref={ref}
         {...props}
       />
-    )
+    );
   }
-)
-Input.displayName = "Input"
+);
+Input.displayName = "Input";
 
-export { Input }
-
-
-
+export { Input };
